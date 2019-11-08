@@ -166,27 +166,25 @@
 		<div class="contInner">
 
 			<!-- 麵包屑 -->
-			<section class="breadcrumbList" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-				<ul>
-					<li class="breadcrumbItem" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-						<a itemprop="item" href="">
-							<span itemprop="name">首頁</span>
-						</a>
-						<meta itemprop="position" content="1">
-					</li>
-					<li class="breadcrumbItem" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-						<a itemprop="item" href="">
-							<span itemprop="name">分類頁</span>
-						</a>
-						<meta itemprop="position" content="2">
-					</li>    
-				</ul>
+			<section class="breadcrumbList">
+				<ol vocab="https://schema.org/" typeof="BreadcrumbList">
+				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
+				    <a property="item" typeof="WebPage"
+				        href="https://example.com/books">
+				      <span property="name">首頁</span></a>
+				    <meta property="position" content="1">
+				  </li>
+				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
+				    <span property="name">分類頁</span>
+				    <meta property="position" content="2">
+				  </li>
+				</ol>
 			</section>
 			<!-- /麵包屑 -->
 
 	        
 	        <!-- 商品列表 -->
-	        <section class="productList" itemscope="" itemtype="http://schema.org/Product">
+	        <section class="productList">
 		        <div class="floorList">
 		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
 		                <a href="/product/moreinfo.asp" itemprop="url">
