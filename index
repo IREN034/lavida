@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>index</title>
+<link href="/images/favicon.ico" rel="shortcut icon">
+<style>
+	/* 省略reset.css 以星號代替*/
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+	}
+	li{
+		list-style: none;
+	}
+	.text-hide{
+		margin: 0;
+	    font: 0/0 a;
+	    color: transparent;
+	    text-shadow: none;
+	    background-color: transparent;
+	    border: 0;
+	}
+	/* 共用置中 */
+	.contInner{
+		width: 100%;
+		margin: 0 auto;
+	}
+	@media (min-width: 890px){
+		.contInner{
+			width: 80%;
+		}
+	}
+	/* 共用文字設定 */
+	*{
+		font: 1em / 1.4em apple-system-font, "Helvetica Neue", Tahoma, "PingFang SC", "lantinghei sc", "Microsoft Yahei", sans-serif
+	}
+	a{
+		color: #333;
+		text-decoration: none
+	}
+	/* Header */
+	.navBar{
+		padding: 10px 0 5px;
+		background: #000;
+		text-align: center;
+	}
+	.navBar .logo{
+		height: 25px;
+	}
+	/* 首頁BN */
+	.blb img{
+		width: 100%;
+	}
+	/* 熱門商品 */
+	.hotBNList{
+		width: calc((100% - 4%)/3);
+		margin: 5px 0.5%;
+		float: left;
+		text-align: center;
+	}
+	.hotBNList img{
+		width: 100%;
+	}
+	/* 商品分類 */
+	.floor{
+		width: 100%;
+		margin: 50px 0;
+	    float: left;
+	    outline: 1px solid #949494;
+	}
+	.floorTitle{
+	    padding: 5px;
+	    font-size: 1.2em;
+		text-align: center;
+	    color: #fff;
+	    background: #949494;	    
+	}
+	.floor .item{
+		width: calc((100% - 4%)/2);
+		margin: 5px 0.5%;
+		float: left;
+		text-align: center;
+		
+	}
+	@media (min-width: 890px){
+		.floor .item{
+			width: calc((100% - 4%)/4);
+			float: left;
+		}
+	}
+	.floor .item img{
+		width: 100%;
+		transition: all 0.5s;
+	}
+	.floor .item:hover img{
+		transform: scale(0.95);
+	}
+	.floor .floorList{
+		float: left;
+	}
+	.floor .itemName{
+		height: 20px;
+		overflow: hidden;
+	}
+	/* 社群連結 */
+	.social{
+		width: 100%;
+		margin-bottom: 15px;
+		float: left;	    
+	    text-align: center;
+	}
+	.social .social-a{
+		padding: 10px;
+	}
+	.social img{
+		width: 50px;
+	}
+	/* footer */
+	footer{
+		width: 100%;
+		float: left;    
+		text-align: center;
+	}
+
+</style>
+</head>
+
+<body>
+<div id="lsdv">
+	
+	<h1 class="text-hide">DIFIER官方購物網</h1>
+
+	<!-- Header -->
+	<header class="navBar" data-role="header">
+		<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
+		<!-- menu -->省略<!-- /menu -->
+		<!-- search -->省略<!-- /search -->
+	</header>
+	<!-- /Header -->
+
+	<main>
+	    <!-- 首頁BN輪播效果省略 -->
+	    <section itemprop="primaryImageOfPage" itemtype="http://schema.org/ImageObject">
+	    	<h2 class="text-hide">首頁BN</h2>
+	    	<figure class="flexslider blb">	
+				  <ul class="slides">
+				    <li data-thumb="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg">
+				      <a href="1" aria-label="首頁BN" itemprop="url">
+				        <img class="" src="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" data-original="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" aria-label="首頁BN" alt="首頁BN" itemprop="image">
+				      </a>
+				    </li>
+				  </ul>
+			</figure>
+		</section>
+		<!-- /首頁BN輪播效果省略 -->
+
+		<!-- 版面置中 -->
+		<div class="contInner">
+		
+	        <!-- 熱門商品,省略手機輪播效果 -->
+	        <section class="row hotBN" itemprop="primaryImageOfPage" itemtype="http://schema.org/ImageObject">
+	        	<h2 class="text-hide">熱門商品</h2>
+	        	<div class="hotBNList">
+	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
+	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
+	        		</a>
+	        	</div>
+	        	<div class="hotBNList">
+	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
+	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
+	        		</a>
+	        	</div>
+	        	<div class="hotBNList">
+	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
+	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
+	        		</a>
+	        	</div>
+	        </section>
+	        <!-- 熱門商品 -->
+
+	        <!-- 商品分類 -->
+	        <section class="floor" itemscope="" itemtype="http://schema.org/Product">
+	            <h2 class="floorTitle">商品分類</h2>
+		        <ul class="floorList">
+		            <li class="item">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <strong>全木質箱體結構</strong>
+		                    <h3 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭字太長請隱藏</h3>
+		                </a>
+		            </li>
+		            <li class="item">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <strong>全木質箱體結構</strong>
+		                    <h3 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+		                </a>
+		            </li>
+		            <li class="item">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <strong>全木質箱體結構</strong>
+		                    <h3 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+		                </a>
+		            </li>
+		            <li class="item">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <strong>全木質箱體結構</strong>
+		                    <h3 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+		                </a>
+		            </li>
+		        </ul>
+	        </section>
+	        <!-- /商品分類 -->
+
+
+			<!-- 社群連結 -->
+			<section class="social">
+				<h2 class="text-hide">社群連結</h2>
+				<a href="" title="FB" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon1.svg" alt="">
+				</a>
+				<a href="" title="推特" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon2.svg" alt="">
+				</a>
+				<a href="" title="YouTube" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon3.svg" alt="">
+				</a>
+				<a href="" title="google+" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon4.svg" alt="">
+				</a>
+			</section>
+			<!-- /社群連結 -->
+
+			<!-- Footer省略 -->				
+			<footer>Copyright © 2019</footer>
+			<!-- /Footer省略 -->
+
+		</div>
+        <!-- /版面置中 -->
+	</main>
+	        
+
+
+
+
+
+	
+
+</div>
+
+</body>
+
+</html>
