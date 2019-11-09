@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>index</title>
+<link href="/images/favicon.ico" rel="shortcut icon">
+<style>
+	/* 省略reset.css 以星號代替*/
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+	}
+	section,nav{
+		display: block;
+	}
+	li{
+		list-style: none;
+	}
+	.text-hide{
+		margin: 0;
+	    font: 0/0 a;
+	    color: transparent;
+	    text-shadow: none;
+	    background-color: transparent;
+	    border: 0;
+	}
+	/* 共用置中 */
+	.contInner{
+		width: 100%;
+		margin: 0 auto;
+	}
+	@media (min-width: 890px){
+		.contInner{
+			width: 80%;
+		}
+	}
+	/* 共用文字設定 */
+	*{
+		font: 1em / 1.4em apple-system-font, "Helvetica Neue", Tahoma, "PingFang SC", "lantinghei sc", "Microsoft Yahei", sans-serif
+	}
+	a{
+		color: #333;
+		text-decoration: none
+	}
+	/* Header */
+	.navBar{
+		padding: 10px 0 5px;
+		background: #000;
+		text-align: center;
+	}
+	.navBar .logo{
+		height: 25px;
+	}
+	/* 麵包屑 */
+	.breadcrumbList{
+		width: 100%;
+		margin: 5px 0;
+		float: left;
+	}
+	.breadcrumbItem{
+		padding-right: 5px;
+		float: left;
+	}
+	.breadcrumbItem a:after{
+		content: ">";
+	}
+	.breadcrumbItem:last-child a:after{
+		content: "";
+	}
+	/* 商品分類 */
+	.sideMenu{
+		width: 100%;
+		margin: 20px 0;
+	    float: left;
+	}
+	@media (min-width: 890px){
+		.sideMenu{
+			width: 15%;
+		}
+	}
+	/* 商品列表 */
+	.productList{
+		width: 100%;
+		margin: 20px 0;
+	    float: left;
+	}
+	@media (min-width: 890px){
+		.productList{
+			width: 85%;
+		}
+	}
+	.productList .item{
+		width: calc((100% - 4%)/2);
+		margin: 5px 0.5%;
+		padding: 0.5%;
+		float: left;
+		outline: 1px solid #f1f1f1;
+		
+	}
+	@media (min-width: 890px){
+		.productList .item{
+			width: calc((100% - 8%)/4);
+			float: left;
+		}
+	}
+	.productList .item img{
+		width: 100%;
+		transition: all 0.5s;
+	}
+	.productList .item:hover img{
+		transform: scale(0.95);
+	}
+	.productList .floorList{
+		float: left;
+	}
+	.productList .itemName{
+		margin: 5px 0;
+		height: 42px;
+		overflow: hidden;
+	}
+	.productList .sizeList{
+		width: calc(50% - 10px);
+		padding: 0 5px;
+		float: left;
+	}
+	.productList .price{
+		width: calc(50% - 10px);
+		padding: 0 10px 0 0;
+    	float: right;
+    	font-size: 1.1em;
+    	color: #ca1e1e;
+    	text-align: right;
+	}
+	.productList .price:before{
+		content: "特價 $"
+	}
+	.productList .addToCart{
+		box-sizing: border-box;
+		width: 100%;
+		margin-top: 5px;
+		padding: 2px;
+   		float: inherit;
+		background: #333;
+		color: #fff;
+		text-align: center;
+	}
+	/* 社群連結 */
+	.social{
+		width: 100%;
+		margin-bottom: 15px;
+		float: left;	    
+	    text-align: center;
+	}
+	.social .social-a{
+		padding: 10px;
+	}
+	.social img{
+		width: 50px;
+	}
+	/* footer */
+	footer{
+		width: 100%;
+		float: left;    
+		text-align: center;
+	}
+</style>
+</head>
+
+<body>
+<div id="lsdv">
+
+	<h1 class="text-hide">DIFIER官方購物網分類名稱</h1>
+
+	<!-- Header -->
+	<header class="navBar" data-role="header">
+		<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
+		<!-- menu -->省略<!-- /menu -->
+		<!-- search -->省略<!-- /search -->
+	</header>
+	<!-- /Header -->
+
+	<main>
+
+		<!-- 版面置中 -->
+		<div class="contInner">
+
+			<!-- 麵包屑 -->
+			<section class="breadcrumbList">
+				<ol vocab="https://schema.org/" typeof="BreadcrumbList">
+				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
+				    <a property="item" typeof="WebPage"
+				        href="https://example.com/books">
+				      <span property="name">首頁</span></a>
+				    <meta property="position" content="1">
+				  </li>
+				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
+				    <span property="name">分類頁</span>
+				    <meta property="position" content="2">
+				  </li>
+				</ol>
+			</section>
+			<!-- /麵包屑 -->
+
+	        <!-- 商品分類 -->
+	        <nav class="sideMenu">商品分類<br>內容省略</nav>
+	        <!-- 商品分類 -->
+
+	        <!-- 商品列表 -->
+	        <section class="productList">
+		        <div class="floorList">
+		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭字太長請隱藏</h2>
+		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
+		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
+		                </a>
+		                <a href="" class="addToCart">加入購物車</a>
+		            </div>
+		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭字太長請隱藏</h2>
+		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
+		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
+		                </a>
+		                <a href="" class="addToCart">加入購物車</a>
+		            </div>
+		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
+		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
+		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
+		                </a>
+		                <a href="" class="addToCart">加入購物車</a>
+		            </div>
+		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
+		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
+		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
+		                </a>
+		                <a href="" class="addToCart">加入購物車</a>
+		            </div>
+		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
+		                <a href="/product/moreinfo.asp" itemprop="url">
+		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
+		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
+		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
+		                </a>
+		                <a href="" class="addToCart">加入購物車</a>
+		            </div>
+		        </div>
+	        </section>
+	        <!-- /商品列表 -->
+
+			<!-- 社群連結 -->
+			<section class="social">
+				<a href="" title="FB" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon1.svg" alt="">
+				</a>
+				<a href="" title="推特" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon2.svg" alt="">
+				</a>
+				<a href="" title="YouTube" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon3.svg" alt="">
+				</a>
+				<a href="" title="google+" class="social-a">
+					<img src="https://shop.edifier.com.tw/images/footer-icon4.svg" alt="">
+				</a>
+			</section>
+			<!-- /社群連結 -->
+			
+			<!-- Footer省略其他資訊 -->
+			<footer>Copyright © 2019</footer>
+			<!-- /Footer省略其他資訊 -->
+
+		</div>
+        <!-- /版面置中 -->
+	</main>
+	        
+
+
+
+
+
+	
+
+</div>
+
+</body>
+
+</html>
