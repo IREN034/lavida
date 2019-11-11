@@ -135,9 +135,11 @@
     	color: #ca1e1e;
     	text-align: right;
 	}
-	.productList .price:before{
-		content: "特價 $"
-	}
+	@media (min-width: 890px){
+		.productList .price:before{
+			content: "特價 $"
+		}
+	}	
 	.productList .addToCart{
 		box-sizing: border-box;
 		width: 100%;
@@ -182,8 +184,8 @@
 	<!-- Header -->
 	<header class="navBar" data-role="header">
 		<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
-		<!-- menu -->省略<!-- /menu -->
-		<!-- search -->省略<!-- /search -->
+		<!-- menu省略 --><!-- /menu省略 -->
+		<!-- search省略 --><!-- /search省略 -->
 	</header>
 	<!-- /Header -->
 
