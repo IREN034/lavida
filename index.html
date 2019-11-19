@@ -45,26 +45,52 @@
 	}
 	/* Header */
 	.navBar{
+		width: 100%;
 		padding: 10px 0 5px;
+		float: left;
 		background: #000;
-		text-align: center;
 	}
-	.navBar .logo{
+	.menu{
+		width: 20%;
+		float: left;
+		color: #fff;
+	}
+	.nav{
+		height: 100vh;
+		width: 80%;
+	    position: fixed;
+	    top: 0;	
+	    z-index: 9; 
+	    overflow: auto;   
+	    background: #000;	    
+	}
+	.NavBrand{
+		width: 80%;
+		float: left;
+	}
+	.NavBrand .logo{
 		height: 25px;
 	}
 	/* 首頁BN */
 	.blb img{
 		width: 100%;
 	}
+	.js-flexslider-carousel{
+		float: left;
+	}
 	/* 熱門商品 */
 	.hotBNList{
-		width: calc((100% - 4%)/3);
+		/*width: calc((100% - 4%)/3);
 		margin: 5px 0.5%;
 		float: left;
-		text-align: center;
+		text-align: center;*/
 	}
 	.hotBNList img{
 		width: 100%;
+	}
+	/* flexslider輪播 */
+	.flexslider{
+		float: left;
 	}
 	/* 商品分類 */
 	.floor{
@@ -126,38 +152,53 @@
 		float: left;    
 		text-align: center;
 	}
-
 </style>
 </head>
 
 <body>
+<link href="css/flexslider.css" rel="stylesheet">
 <div id="lsdv">
 	
 	<h1 class="text-hide">DIFIER官方購物網</h1>
 
 	<!-- Header -->
 	<header class="navBar" data-role="header">
-		<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
-		<!-- menu省略 --><!-- /menu省略 -->
+		<!-- menu省略 -->
+		<div class="menu">
+			<div class="menuBtn">menu</div>
+			<nav class="nav" style="display: none"><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容</P><P>我有很多內容10</P></nav>
+		</div>
+		<!-- /menu省略 -->
+		<div class="NavBrand">
+			<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
+		</div>
 		<!-- search省略 --><!-- /search省略 -->
 	</header>
 	<!-- /Header -->
 
 	<main>
-	    <!-- 首頁BN輪播效果省略 -->
+	    <!-- 首頁BN輪播 -->
 	    <section itemprop="primaryImageOfPage" itemtype="http://schema.org/ImageObject">
 	    	<h2 class="text-hide">首頁BN</h2>
 	    	<figure class="flexslider blb">	
-				  <ul class="slides">
-				    <li data-thumb="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg">
-				      <a href="1" aria-label="首頁BN" itemprop="url">
-				        <img class="" src="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" data-original="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" aria-label="首頁BN" alt="首頁BN" itemprop="image">
-				      </a>
-				    </li>
-				  </ul>
+				  <div class="BLB-ring">
+					  <ul class="slides">
+					    <li data-thumb="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg">
+					      <a href="1" aria-label="首頁BN" itemprop="url">
+					        <img class="" src="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" data-original="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-3.jpg" aria-label="首頁BN" alt="首頁BN" itemprop="image">
+					      </a>
+					    </li>
+					    <li data-thumb="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-4.jpg">
+					      <a href="1" aria-label="首頁BN" itemprop="url">
+					        <img class="" src="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-4.jpg" data-original="http://www.eclife.com.tw/EDM/MALL/Tina/7/W830BT-4.jpg" aria-label="首頁BN" alt="首頁BN" itemprop="image">
+					      </a>
+					    </li>
+					  </ul>
+					</div>
 			</figure>
 		</section>
-		<!-- /首頁BN輪播效果省略 -->
+		<!-- /首頁BN輪播 -->
+		
 
 		<!-- 版面置中 -->
 		<div class="contInner">
@@ -165,24 +206,30 @@
 	        <!-- 熱門商品,省略手機輪播效果 -->
 	        <section class="row hotBN" itemprop="primaryImageOfPage" itemtype="http://schema.org/ImageObject">
 	        	<h2 class="text-hide">熱門商品</h2>
-	        	<div class="hotBNList">
-	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
-	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
-	        		</a>
-	        	</div>
-	        	<div class="hotBNList">
-	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
-	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
-	        		</a>
-	        	</div>
-	        	<div class="hotBNList">
-	        		<a href="1" aria-label="熱門商品BN" itemprop="url">
-	        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-	        			<h3 class="">晶瑩精萃系列晶瑩精萃系列</h3>
-	        		</a>
-	        	</div>
+	        	<div class="js-flexslider-carousel">
+				    <div class="flex-viewport" style="overflow: hidden;">
+				        <ul class="slides hotBNList">
+				            <li>
+				                <a href="1" aria-label="熱門商品BN" itemprop="url">
+				        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+				        			<h3 class="">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+				        		</a>
+				            </li>
+				            <li>
+				                <a href="1" aria-label="熱門商品BN" itemprop="url">
+				        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+				        			<h3 class="">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+				        		</a>
+				            </li>
+				            <li>
+				                <a href="1" aria-label="熱門商品BN" itemprop="url">
+				        			<img data-original="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" src="https://www.edifier.com.tw/upload/ad_list/d370096a79f487d492491ccadb88aacd.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
+				        			<h3 class="">EDIFIER R1800TIII 2.0聲道喇叭</h3>
+				        		</a>
+				            </li>
+				        </ul>
+				    </div>
+				</div>
 	        </section>
 	        <!-- 熱門商品 -->
 
@@ -249,15 +296,71 @@
         <!-- /版面置中 -->
 	</main>
 	        
-
-
-
-
-
 	
 
 </div>
+<script src="js/jquery.min.js"></script>
+<script>
+<!--  漢堡選單建議 -->
+$(".menuBtn").click(function () {
+  $(".nav").css("display","block");
+  $("html").css("overflow","hidden");
+});
+$(".nav").click(function () {
+  $(".nav").css("display","none");
+  $("html").css("overflow","");
+});
+<!--  /漢堡選單建議 -->
+</script>
 
+
+<script src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+function getTotalWidth() {
+    var myWidth;
+    if (typeof (window.innerWidth) == 'number') {
+        myWidth = window.innerWidth - 20;
+    } else {
+        myWidth = document.documentElement.clientWidth - 20;
+    }
+    return myWidth;
+}
+<!-- flexslider輪播 -->
+$(document).ready(function(){
+  $('.flexslider').flexslider({
+    animation: "fade",
+    slideshowSpeed: 7000,
+    animationSpeed: 1000,
+    start: function(slider){
+      $('body').removeClass('loading');
+    }
+  });
+});
+$(function () {
+    var w = 0;
+    if (getTotalWidth() > 1199) {
+        w = 200;
+    }else if (getTotalWidth() <= 700){
+        w = 200;
+    }
+    else{
+        w = 300;
+    }
+    $(".js-flexslider-carousel").flexslider({
+        animation: "slide",
+        animationLoop: false,
+        touch: true,
+        controlNav: false,
+        directionNav: true,
+        animationSpeed: 2000,
+        itemWidth: w,
+        itemMargin: 5,
+        minItems: 1,
+        maxItems: 6,
+    });
+});
+<!-- /flexslider -->
+</script>
 </body>
 
 </html>
