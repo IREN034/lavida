@@ -140,7 +140,7 @@
 		}
 	@media (min-width: 890px){
 		.productList .price:before{
-			content: "特價 $"
+			content: "$"
 		}
 	}	
 	.productList .addToCart{
@@ -176,9 +176,16 @@
 		float: left;    
 		text-align: center;
 	}
+	.sideMenus{
+		display: none;
+	}
+	.open{
+		display: block;
+	}
+
 </style>
 </head>
-
+<link href="css/flexslider.css" rel="stylesheet">
 <body>
 <div id="lsdv">
 
@@ -215,7 +222,7 @@
 			<!-- /麵包屑 -->
 
 	        <!-- 商品分類 -->
-	        <nav class="sideMenu">商品分類<br>內容省略</nav>
+	        <nav class="sideMenu">商品分類<br><div class="sideMenus">內容省略</div></nav>
 	        <!-- 商品分類 -->
 
 	        <!-- 商品列表 -->
@@ -308,7 +315,72 @@
 	
 
 </div>
+<script src="js/jquery.min.js"></script>
+<script>
+<!--  漢堡選單建議 -->
 
+$( ".sideMenu" ).click(function() {
+  $( ".sideMenus" ).toggleClass( "open" );
+});
+
+// $(".sideMenu").click(function () {
+//   $(".sideMenus").css("display","block");
+  
+// });
+// $(".sideMenus").click(function () {
+//   $(".sideMenus").css("display","none");
+// });
+<!--  /漢堡選單建議 -->
+</script>
+
+
+<script src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+function getTotalWidth() {
+    var myWidth;
+    if (typeof (window.innerWidth) == 'number') {
+        myWidth = window.innerWidth - 20;
+    } else {
+        myWidth = document.documentElement.clientWidth - 20;
+    }
+    return myWidth;
+}
+<!-- flexslider輪播 -->
+$(document).ready(function(){
+  $('.flexslider').flexslider({
+    animation: "fade",
+    slideshowSpeed: 7000,
+    animationSpeed: 1000,
+    start: function(slider){
+      $('body').removeClass('loading');
+    }
+  });
+});
+$(function () {
+    var w = 0;
+    if (getTotalWidth() > 1199) {
+        w = 200;
+    }else if (getTotalWidth() <= 700){
+        w = 200;
+    }
+    else{
+        w = 300;
+    }
+    $(".js-flexslider-carousel").flexslider({
+        animation: "slide",
+        animationLoop: false,
+        touch: true,
+        controlNav: false,
+        directionNav: true,
+        animationSpeed: 2000,
+        itemWidth: w,
+        itemMargin: 5,
+        minItems: 1,
+        maxItems: 6,
+    });
+});
+<!-- /flexslider -->
+</script>
 </body>
 
 </html>
