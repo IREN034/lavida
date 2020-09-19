@@ -1,386 +1,346 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html>
+
 <head>
-<meta charset="utf-8">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>productList</title>
-<link href="/images/favicon.ico" rel="shortcut icon">
-<style>
-	/* 省略reset.css 以星號代替*/
-	*{
-		margin: 0;
-		padding: 0;
-		font-size: 16px;
-	}
-	section,nav{
-		display: block;
-	}
-	li{
-		list-style: none;
-	}
-	.text-hide{
-		margin: 0;
-	    font: 0/0 a;
-	    color: transparent;
-	    text-shadow: none;
-	    background-color: transparent;
-	    border: 0;
-	}
-	/* 共用置中 */
-	.contInner{
-		width: 100%;
-		margin: 0 auto;
-	}
-	@media (min-width: 890px){
-		.contInner{
-			width: 80%;
-		}
-	}
-	/* 共用文字設定 */
-	*{
-		font: 1em / 1.4em apple-system-font, "Helvetica Neue", Tahoma, "PingFang SC", "lantinghei sc", "Microsoft Yahei", sans-serif
-	}
-	a{
-		color: #333;
-		text-decoration: none
-	}
-	/* Header */
-	.navBar{
-		padding: 10px 0 5px;
-		background: #000;
-		text-align: center;
-	}
-	.navBar .logo{
-		height: 25px;
-	}
-	/* 麵包屑 */
-	.breadcrumbList{
-		width: 100%;
-		margin: 5px 0;
-		float: left;
-	}
-	.breadcrumbItem{
-		padding-right: 5px;
-		float: left;
-	}
-	.breadcrumbItem a:after{
-		content: ">";
-	}
-	.breadcrumbItem:last-child a:after{
-		content: "";
-	}
-	/* 商品分類 */
-	.sideMenu{
-		width: 100%;
-		margin: 20px 0;
-	    float: left;
-	}
-	@media (min-width: 890px){
-		.sideMenu{
-			width: 15%;
-		}
-	}
-	/* 商品列表 */
-	.productList{
-		width: 100%;
-		margin: 20px 0;
-	    float: left;
-	}
-	@media (min-width: 890px){
-		.productList{
-			width: 85%;
-		}
-	}
-	.productList .item{
-		width: calc((100% - 4%)/2);
-		margin: 5px 0.5%;
-		padding: 0.5%;
-		float: left;
-		outline: 1px solid #f1f1f1;
-		
-	}
-	@media (min-width: 890px){
-		.productList .item{
-			width: calc((100% - 8%)/4);
-			float: left;
-		}
-	}
-	.productList .item img{
-		width: 100%;
-		transition: all 0.5s;
-	}
-	.productList .item:hover img{
-		transform: scale(0.95);
-	}
-	.productList .floorList{
-		float: left;
-	}
-	.productList .itemName{
-		margin: 5px 0;
-		height: 42px;
-		overflow: hidden;
-	}
-	.productList .sizeList{
-		width: calc(50% - 10px);
-		padding: 0 5px;
-		float: left;
-	}
-	.productList .price{
-		width: calc(50% - 10px);
-		padding: 0 10px 0 0;
-    	float: right;
-    	font-size: 1.1em;
-    	color: #ca1e1e;
-    	text-align: right;
-	}
-	.productList .price:before{
-			content: "$"
-		}
-	@media (min-width: 890px){
-		.productList .price:before{
-			content: "$"
-		}
-	}	
-	.productList .addToCart{
-		box-sizing: border-box;
-		width: 100%;
-		margin-top: 5px;
-		padding: 2px;
-   		float: inherit;
-		background: #333;
-		color: #fff;
-		text-align: center;
-	}
-	/* 分頁 */
-	.pagination{
-		text-align: right;
-	}
-	/* 社群連結 */
-	.social{
-		width: 100%;
-		margin-bottom: 15px;
-		float: left;	    
-	    text-align: center;
-	}
-	.social .social-a{
-		padding: 10px;
-	}
-	.social img{
-		width: 50px;
-	}
-	/* footer */
-	footer{
-		width: 100%;
-		float: left;    
-		text-align: center;
-	}
-	.sideMenus{
-		display: none;
-	}
-	.open{
-		display: block;
-	}
-
-</style>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
 </head>
-<link href="css/flexslider.css" rel="stylesheet">
+
 <body>
-<div id="lsdv">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
 
-	<h1 class="text-hide">DIFIER官方購物網分類名稱</h1>
+        input {
+            padding: 5px;
+            font-size: 18px;
+        }
 
-	<!-- Header -->
-	<header class="navBar" data-role="header">
-		<a href="#" title="EDIFIER官方購物網"><img src="https://shop.edifier.com.tw/images/logo.svg" arial-label="EDIFIER官方購物網" alt="EDIFIER官方購物網" class="logo"></a>
-		<!-- menu省略 --><!-- /menu省略 -->
-		<!-- search省略 --><!-- /search省略 -->
-	</header>
-	<!-- /Header -->
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-	<main>
+        .w5 {
+            width: 50%;
+            float: left;
+        }
 
-		<!-- 版面置中 -->
-		<div class="contInner">
+        .header {
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            background: #03a9f4;
+            color: #fff;
+        }
 
-			<!-- 麵包屑 -->
-			<section class="breadcrumbList">
-				<ol vocab="https://schema.org/" typeof="BreadcrumbList">
-				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
-				    <a property="item" typeof="WebPage"
-				        href="https://example.com/books">
-				      <span property="name">首頁</span></a>
-				    <meta property="position" content="1">
-				  </li>
-				  <li class="breadcrumbItem" property="itemListElement" typeof="ListItem">
-				    <span property="name">分類頁</span>
-				    <meta property="position" content="2">
-				  </li>
-				</ol>
-			</section>
-			<!-- /麵包屑 -->
+        table {
+            width: 100%;
+            margin-bottom: 100px;
+        }
 
-	        <!-- 商品分類 -->
-	        <nav class="sideMenu">商品分類<br><div class="sideMenus">內容省略</div></nav>
-	        <!-- 商品分類 -->
+        tr:nth-child(even) {
+            background: #efefef;
+        }
 
-	        <!-- 商品列表 -->
-	        <section class="productList">
-		        <!-- 商品列表內容 -->
-		        <div class="floorList">
-		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
-		                <a href="/product/moreinfo.asp" itemprop="url">
-		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭字太長請隱藏</h2>
-		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
-		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
-		                </a>
-		                <a href="" class="addToCart">加入購物車</a>
-		            </div>
-		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
-		                <a href="/product/moreinfo.asp" itemprop="url">
-		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭字太長請隱藏</h2>
-		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
-		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
-		                </a>
-		                <a href="" class="addToCart">加入購物車</a>
-		            </div>
-		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
-		                <a href="/product/moreinfo.asp" itemprop="url">
-		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
-		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
-		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
-		                </a>
-		                <a href="" class="addToCart">加入購物車</a>
-		            </div>
-		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
-		                <a href="/product/moreinfo.asp" itemprop="url">
-		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
-		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
-		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
-		                </a>
-		                <a href="" class="addToCart">加入購物車</a>
-		            </div>
-		            <div class="item" itemscope="" itemtype="http://schema.org/Product">
-		                <a href="/product/moreinfo.asp" itemprop="url">
-		                    <img data-original="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" src="https://shop.edifier.com.tw/photo2011/prod_2018/4/F4212796-A.jpg" alt="EDIFIER R1800TIII 2.0聲道喇叭" title="EDIFIER R1800TIII 2.0聲道喇叭" aria-label="EDIFIER R1800TIII 2.0聲道喇叭" itemprop="image">
-		                    <h2 class="itemName" itemprop="name">EDIFIER R1800TIII 2.0聲道喇叭</h2>
-		                    <h3 class="sizeList" itemprop="additionalProperty" itemscope="" itemtype="http://schema.org/PropertyValue" >2.0聲道</h3>
-		                    <div class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><meta content="TWD" itemprop="priceCurrency"><span class="priceNumber" aria-label="售價" itemprop="price">12000</span></div>
-		                </a>
-		                <a href="" class="addToCart">加入購物車</a>
-		            </div>
-		        </div>
-		        <!-- /商品列表內容 -->
-		        <!-- 商品列表分頁 -->
-		        <div class="pagination">省略部分架構，<span class="page">共<b>2</b>頁，共<b>72</b>筆</span></div>
-		        <!-- /商品列表分頁 -->
-	        </section>
-	        <!-- /商品列表 -->
+        th,
+        td {
+            padding: 5px;
+            line-height: 2.3em;
+            text-align: left;
+        }
 
-			<!-- 社群連結 -->
-			<section class="social">
-				<a href="" title="FB" class="social-a">
-					<img src="https://shop.edifier.com.tw/images/footer-icon1.svg" alt="">
-				</a>
-				<a href="" title="推特" class="social-a">
-					<img src="https://shop.edifier.com.tw/images/footer-icon2.svg" alt="">
-				</a>
-				<a href="" title="YouTube" class="social-a">
-					<img src="https://shop.edifier.com.tw/images/footer-icon3.svg" alt="">
-				</a>
-				<a href="" title="google+" class="social-a">
-					<img src="https://shop.edifier.com.tw/images/footer-icon4.svg" alt="">
-				</a>
-			</section>
-			<!-- /社群連結 -->
-			
-			<!-- Footer省略其他資訊 -->
-			<footer>Copyright © 2019</footer>
-			<!-- /Footer省略其他資訊 -->
+        th {
+            width: 35%;
+            font-size: 14px;
+        }
 
-		</div>
-        <!-- /版面置中 -->
-	</main>
-	        
+        td {
+            font-size: 18px;
+        }
+
+        .red {
+            color: orangered;
+        }
+
+        .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            box-shadow: -1px -1px 10px 0 #9E9E9E;
+        }
+
+        .name {
+            width: 50%;
+            border: 0;
+            text-align: center;
+        }
+
+        .btn {
+            width: 50%;
+            height: 50px;
+            outline: 0;
+            border: none;
+            background: #03a9f4;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+
+    <h1 class="header">海洋嘉年華〈1號箱豚缸〉保養紀錄</h1>
+    <form>
+    <table>
+        <tr>
+            <th>保養日期</th>
+            <td><span id="data"></span></td>
+        </tr>
+        <tr>
+            <th>海水比重</th>
+            <td><input type="number" id="seawaterInput" placeholder="1.018~1.030" /></td>
+        </tr>
+        <tr>
+            <th>下藥紀錄</th>
+            <td><input type="text" id="medicationInput" placeholder="請輸入下藥紀錄" /></td>
+        </tr>
+        <tr>
+            <!-- // 陣列回傳 morningInput -->
+            <th>上午餵食</th>
+            <td>
+                <ul>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="飼料">飼料</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="morning" value="朱文錦">朱文錦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="黑殼蝦">黑殼蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="豐年蝦">豐年蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="魚塊">魚塊</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="透抽">透抽</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="白蝦">白蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="morning" value="康蝦">康蝦</label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <!-- // 陣列回傳 afternoonInput -->
+            <th>下午餵食</th>
+            <td>
+                <ul>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="飼料">飼料</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="afternoon" value="朱文錦">朱文錦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="黑殼蝦">黑殼蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="豐年蝦">豐年蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="魚塊">魚塊</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="透抽">透抽</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="白蝦">白蝦</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="afternoon" value="康蝦">康蝦</label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <!-- // 取值 "V" 回傳 -->
+            <th>是否添加</th>
+            <td>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="addto" id="nitrifyingInput" value="V">硝化菌0.5cc</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="addto" id="sodaInput" value="V">小蘇打</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="addto" id="hydroxideInput" value="V">氫氧化鈣</label>
+                    </li>
+                </ul>
+
+            </td>
+        </tr>
+        <tr>
+            <!-- // 取值 "V" 回傳 -->
+            <th>是否<br>清潔更換</th>
+            <td>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="clean" id="cylinderWallInput" value="V">缸壁藻類水垢清潔</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="clean" id="outletInput" value="V">出水口藻類清潔</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="clean" id="proteinMachineInput" value="V">蛋白機清洗</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="clean" id="filterSpongeInput" value="V">過濾白棉更換</label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <!-- // 陣列回傳 unusualInput -->
+            <th><b class="red">異常設備</b>
+            </th>
+            <td>
+                <ul>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="主馬達">主馬達</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="造浪">造浪</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="殺菌燈">殺菌燈</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="曝氣機">曝氣機</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="臭氧機">臭氧機</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="缸底水位">缸底水位</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="缸底硫化氫">缸底硫化氫</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="自動補水">自動補水</label>
+                    </li>
+                    <li class="w5">
+                        <label><input type="checkbox" name="machine" value="溫度顯示">溫度顯示</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="machine" value="燈光/定時器">燈光/定時器</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="machine" value="感測線不在水中">感測線不在水中</label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <th>魚口增減</th>
+            <td><input type="number" id="fishInput" placeholder="請輸入" /></td>
+        </tr>
+        <tr>
+            <th>交接建議</th>
+            <td><input type="text" id="suggestionInput" placeholder="請輸入" /></td>
+        </tr>
+    </table>
+    <div class="footer">
+        <input type="text" id="personnelInput" class="name" placeholder="請輸入維護人員" />
+        <input type="button" value="送 出" class="btn" onclick="SendScore(this.form)">
+    </div>
+
+</form>
+
+
+    <script type="text/javascript">
+        document.getElementById("data").innerHTML = new Date().toDateString();
+
+        function SendScore(formObj) {
+
+            var morning = formObj.morning;
+            var morningInput = [];
+            for (var i = 0; i < morning.length; i++) {
+                if (morning[i].checked) {
+                    morningInput.push(morning[i].value);
+                }
+            };
+
+            var afternoon = formObj.afternoon;
+            var afternoonInput = [];
+            for (var i = 0; i < afternoon.length; i++) {
+                if (afternoon[i].checked) {
+                    afternoonInput.push(afternoon[i].value);
+                }
+            };
+
+            var machine = formObj.machine;
+            var unusualInput = [];
+            for (var i = 0; i < machine.length; i++) {
+                if (machine[i].checked) {
+                    unusualInput.push(machine[i].value);
+                }
+            };
 
 
 
+            $.get("https://script.google.com/macros/s/AKfycbwcUzfiLANYyuYriO9Ni7pcAdLfZ2h5PZksTGN2-NH1Ad2dgpq9/exec", {
+              
+                "data": new Date().toDateString(),
+                "seawater": document.getElementById("seawaterInput").value,
+                "medication": document.getElementById("medicationInput").value,
 
+                // 陣列回傳 morningInput
+                "morning": morningInput.join(),
+                // 陣列回傳 afternoonInput
+                "afternoon": afternoonInput.join(),
 
-	
+                "nitrifying": document.getElementById("nitrifyingInput").checked,
+                "soda": document.getElementById("sodaInput").checked,
+                "hydroxide": document.getElementById("hydroxideInput").checked,
+                
+                "cylinderWall": document.querySelector("#cylinderWallInput").checked,
+                "outlet": document.querySelector("#outletInput").checked,
+                "proteinMachine": document.querySelector("#proteinMachineInput").checked,                
+                "filterSponge": document.querySelector('#filterSpongeInput').checked,
 
-</div>
-<script src="js/jquery.min.js"></script>
-<script>
-<!--  漢堡選單建議 -->
+                // 陣列回傳 unusualInput 
+                "unusual": unusualInput.join(),
 
-$( ".sideMenu" ).click(function() {
-  $( ".sideMenus" ).toggleClass( "open" );
-});
+                "fish": document.getElementById("fishInput").value,
+                "suggestion": document.getElementById("suggestionInput").value,                
+                "personnel": document.getElementById("personnelInput").value,
 
-// $(".sideMenu").click(function () {
-//   $(".sideMenus").css("display","block");
-  
-// });
-// $(".sideMenus").click(function () {
-//   $(".sideMenus").css("display","none");
-// });
-<!--  /漢堡選單建議 -->
-</script>
+            },
 
-
-<script src="js/jquery.flexslider.js"></script>
-<script type="text/javascript">
-function getTotalWidth() {
-    var myWidth;
-    if (typeof (window.innerWidth) == 'number') {
-        myWidth = window.innerWidth - 20;
-    } else {
-        myWidth = document.documentElement.clientWidth - 20;
-    }
-    return myWidth;
-}
-<!-- flexslider輪播 -->
-$(document).ready(function(){
-  $('.flexslider').flexslider({
-    animation: "fade",
-    slideshowSpeed: 7000,
-    animationSpeed: 1000,
-    start: function(slider){
-      $('body').removeClass('loading');
-    }
-  });
-});
-$(function () {
-    var w = 0;
-    if (getTotalWidth() > 1199) {
-        w = 200;
-    }else if (getTotalWidth() <= 700){
-        w = 200;
-    }
-    else{
-        w = 300;
-    }
-    $(".js-flexslider-carousel").flexslider({
-        animation: "slide",
-        animationLoop: false,
-        touch: true,
-        controlNav: false,
-        directionNav: true,
-        animationSpeed: 2000,
-        itemWidth: w,
-        itemMargin: 5,
-        minItems: 1,
-        maxItems: 6,
-    });
-});
-<!-- /flexslider -->
-</script>
+                function (data) {
+                    document.write("--------------------------");
+                    document.write("Result = " + data);
+                    document.write("--------------------------");
+                });
+        }
+    </script>
 </body>
 
 </html>
+
+<!-- https://blog.maki0419.com/2015/06/google-database.html -->
