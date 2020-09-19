@@ -22,15 +22,11 @@
         padding: 5px;
         font-size: 14px;
     }
-    h1{
-        background: #03a9f4;
-        color: #fff;
-    }
 </style>
 
 <body>
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-    <h1>1號: 箱豚缸</h1>
+    
     <div id="test"></div>
     <script>
 
@@ -70,7 +66,7 @@
                 html += '<tr>' + data + seawater + medication + fish + morning + afternoon + nitrifying + soda + hydroxide + cylinderwall + outlet + proteinmachine + filtersponge + unusual + suggestion + personnel + '</tr>';
 
             }
-            $("#test").html('<table>' + html + '</table');
+            $("#test").html('<table><tr><td colspan="16">1號: 箱豚缸</td></tr>' + html + '</table');
         });
     </script>
 
