@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+</head>
+<style>
+    table {
+        width: 1024px;
+    }
+    tr:first-child{
+        background: #03a9f4;
+        color: #fff;
+    }
+    tr:nth-child(even) {
+        background: #efefef;
+    }
+    td{
+        padding: 5px;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    
+    <div id="test"></div>
+    <script>
+
+        // entry, i,  data, seawater, medication, morning, afternoon, nitrifying, soda, hydroxide, cylinderWall, outlet, proteinMachine, filterSponge, unusual, fish, suggestion, personnel;
+
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1HkDhsrUo4Duj3pK9uRyNiqDpDLpQvFdcdc4PteTetcU/1/public/values?alt=json-in-script&callback=?", function (json) {
+            var e = json.feed.entry,
+                l = e.length,
+                html = "",
+                // entry, i, authority, serial, name, sex, register;
+                entry, i, data, seawater, medication, morning, afternoon, nitrifying, soda, hydroxide, cylinderWall, outlet, proteinMachine, filterSponge, unusual, fish, suggestion, personnel;
+
+            for (i = 0; i < l; i++) {
+                entry = e[i];
+
+                data = '<td>' + entry.gsx$data.$t + '</td>';
+                seawater = '<td>' + entry.gsx$seawater.$t + '</td>';
+                medication = '<td>' + entry.gsx$medication.$t + '</td>';
+
+                morning = '<td>' + entry.gsx$morning.$t + '</td>';
+                afternoon = '<td>' + entry.gsx$afternoon.$t + '</td>';
+                
+                nitrifying = '<td>' + entry.gsx$nitrifying.$t + '</td>';
+                soda = '<td>' + entry.gsx$soda.$t + '</td>';
+                hydroxide = '<td>' + entry.gsx$hydroxide.$t + '</td>';
+                              
+                cylinderwall = '<td>' + entry.gsx$cylinderwall.$t + '</td>';              
+                outlet = '<td>' + entry.gsx$outlet.$t + '</td>';
+                proteinmachine = '<td>' + entry.gsx$proteinmachine.$t + '</td>';
+                filtersponge = '<td>' + entry.gsx$filtersponge.$t + '</td>';
+
+                unusual = '<td>' + entry.gsx$unusual.$t + '</td>';                
+                fish = '<td>' + entry.gsx$fish.$t + '</td>';
+                suggestion = '<td>' + entry.gsx$suggestion.$t + '</td>';
+                personnel = '<td>' + entry.gsx$personnel.$t + '</td>';
+
+                html += '<tr>' + data + seawater + medication + fish + morning + afternoon + nitrifying + soda + hydroxide + cylinderwall + outlet + proteinmachine + filtersponge + unusual + suggestion + personnel + '</tr>';
+
+            }
+            $("#test").html('<table><tr><td colspan="16">5號: 裸胸鯙</td></tr>' + html + '</table');
+        });
+    </script>
+
+</body>
+
+</html>
