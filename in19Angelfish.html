@@ -1,0 +1,346 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .w5 {
+            width: 50%;
+            float: left;
+        }
+
+        .header {
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            background: #03a9f4;
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 100px;
+        }
+
+        tr:nth-child(even) {
+            background: #efefef;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            line-height: 2.3em;
+            text-align: left;
+        }
+
+        th {
+            width: 35%;
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 18px;
+        }
+
+        .red {
+            color: orangered;
+        }
+
+        .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            box-shadow: -1px -1px 10px 0 #9E9E9E;
+        }
+
+        .name {
+            width: 50%;
+            border: 0;
+            text-align: center;
+        }
+
+        .btn {
+            width: 50%;
+            height: 50px;
+            outline: 0;
+            border: none;
+            background: #03a9f4;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+
+    <h1 class="header">海洋嘉年華〈19號:神仙魚〉保養紀錄</h1>
+    <form>
+        <table>
+            <tr>
+                <th>保養日期</th>
+                <td><span id="data"></span></td>
+            </tr>
+            <tr>
+                <th>海水比重</th>
+                <td><input type="number" id="seawaterInput" placeholder="1.018~1.030" /></td>
+            </tr>
+            <tr>
+                <th>下藥紀錄</th>
+                <td><input type="text" id="medicationInput" placeholder="請輸入下藥紀錄" /></td>
+            </tr>
+            <tr>
+                <!-- // 陣列回傳 morningInput -->
+                <th>上午餵食</th>
+                <td>
+                    <ul>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="飼料">飼料</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="morning" value="朱文錦">朱文錦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="黑殼蝦">黑殼蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="豐年蝦">豐年蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="魚塊">魚塊</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="透抽">透抽</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="白蝦">白蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="morning" value="康蝦">康蝦</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <!-- // 陣列回傳 afternoonInput -->
+                <th>下午餵食</th>
+                <td>
+                    <ul>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="飼料">飼料</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="afternoon" value="朱文錦">朱文錦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="黑殼蝦">黑殼蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="豐年蝦">豐年蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="魚塊">魚塊</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="透抽">透抽</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="白蝦">白蝦</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="afternoon" value="康蝦">康蝦</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <!-- // 取值 "V" 回傳 -->
+                <th>是否添加</th>
+                <td>
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" name="addto" id="nitrifyingInput" value="V">硝化菌0.5cc</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="addto" id="sodaInput" value="V">小蘇打</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="addto" id="hydroxideInput" value="V">氫氧化鈣</label>
+                        </li>
+                    </ul>
+
+                </td>
+            </tr>
+            <tr>
+                <!-- // 取值 "V" 回傳 -->
+                <th>是否<br>清潔更換</th>
+                <td>
+                    <ul>
+                        <li>
+                            <label><input type="checkbox" name="clean" id="cylinderWallInput" value="V">缸壁藻類水垢清潔</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="clean" id="outletInput" value="V">出水口藻類清潔</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="clean" id="proteinMachineInput" value="V">蛋白機清洗</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="clean" id="filterSpongeInput" value="V">過濾白棉更換</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <!-- // 陣列回傳 unusualInput -->
+                <th><b class="red">異常設備</b>
+                </th>
+                <td>
+                    <ul>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="主馬達">主馬達</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="造浪">造浪</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="殺菌燈">殺菌燈</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="曝氣機">曝氣機</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="臭氧機">臭氧機</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="缸底水位">缸底水位</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="缸底硫化氫">缸底硫化氫</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="自動補水">自動補水</label>
+                        </li>
+                        <li class="w5">
+                            <label><input type="checkbox" name="machine" value="溫度顯示">溫度顯示</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="machine" value="燈光/定時器">燈光/定時器</label>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" name="machine" value="感測線不在水中">感測線不在水中</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th>魚口增減</th>
+                <td><input type="number" id="fishInput" placeholder="請輸入" /></td>
+            </tr>
+            <tr>
+                <th>交接建議</th>
+                <td><input type="text" id="suggestionInput" placeholder="請輸入" /></td>
+            </tr>
+        </table>
+        <div class="footer">
+            <input type="text" id="personnelInput" class="name" placeholder="請輸入維護人員" />
+            <input type="button" value="送 出" class="btn" onclick="SendScore(this.form)">
+        </div>
+
+    </form>
+
+
+    <script type="text/javascript">
+        document.getElementById("data").innerHTML = new Date().toDateString();
+
+        function SendScore(formObj) {
+
+            var morning = formObj.morning;
+            var morningInput = [];
+            for (var i = 0; i < morning.length; i++) {
+                if (morning[i].checked) {
+                    morningInput.push(morning[i].value);
+                }
+            };
+
+            var afternoon = formObj.afternoon;
+            var afternoonInput = [];
+            for (var i = 0; i < afternoon.length; i++) {
+                if (afternoon[i].checked) {
+                    afternoonInput.push(afternoon[i].value);
+                }
+            };
+
+            var machine = formObj.machine;
+            var unusualInput = [];
+            for (var i = 0; i < machine.length; i++) {
+                if (machine[i].checked) {
+                    unusualInput.push(machine[i].value);
+                }
+            };
+
+            $.get("https://script.google.com/macros/s/AKfycbzFOCFwraBykQtVXZhcXASZKg5fpWodime909X6J_M1DI-MeA/exec" , {
+
+
+
+                "data": new Date().toDateString(),
+                "seawater": document.getElementById("seawaterInput").value,
+                "medication": document.getElementById("medicationInput").value,
+
+                // 陣列回傳 morningInput
+                "morning": morningInput.join(),
+                // 陣列回傳 afternoonInput
+                "afternoon": afternoonInput.join(),
+
+                "nitrifying": document.getElementById("nitrifyingInput").checked,
+                "soda": document.getElementById("sodaInput").checked,
+                "hydroxide": document.getElementById("hydroxideInput").checked,
+
+                "cylinderWall": document.querySelector("#cylinderWallInput").checked,
+                "outlet": document.querySelector("#outletInput").checked,
+                "proteinMachine": document.querySelector("#proteinMachineInput").checked,
+                "filterSponge": document.querySelector('#filterSpongeInput').checked,
+
+                // 陣列回傳 unusualInput 
+                "unusual": unusualInput.join(),
+
+                "fish": document.getElementById("fishInput").value,
+                "suggestion": document.getElementById("suggestionInput").value,
+                "personnel": document.getElementById("personnelInput").value,
+
+            },
+
+                function (data) {
+                    document.write("--------------------------");
+                    document.write("Result = " + data);
+                    document.write("--------------------------");
+                });
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- https://blog.maki0419.com/2015/06/google-database.html -->
