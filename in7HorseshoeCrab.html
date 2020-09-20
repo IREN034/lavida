@@ -257,7 +257,7 @@
 
             <tr>
                 <th>魚口增減</th>
-                <td><input type="number" id="fishInput" placeholder="請輸入" /></td>
+                <td><input type="text" id="fishInput" placeholder="請輸入" /></td>
             </tr>
             <tr>
                 <th>交接建議</th>
@@ -265,7 +265,8 @@
             </tr>
         </table>
         <div class="footer">
-            <input type="text" id="personnelInput" class="name" placeholder="請輸入維護人員" />
+        <input type="text" id="personnelInput" class="name" value="琪絜" placeholder="請輸入維護人員" />
+
             <input type="button" value="送 出" class="btn" onclick="SendScore(this.form)">
         </div>
 
@@ -332,11 +333,11 @@
 
             },
 
-                function (data) {
-                    document.write("--------------------------");
-                    document.write("Result = " + data);
-                    document.write("--------------------------");
-                });
+              function (data) {
+    document.write("<a href='index.html'><h2> 回列表 </h2></a>"); 
+    document.write("<a href='output.html'><h2> 看結果 </h2></a>"); 
+    document.write("Result = " + data);
+});
         }
     </script>
 </body>
